@@ -1,6 +1,8 @@
 name: "Linter essai"
 on:
  pull_request:
+   branches: [main,master]
+      
 jobs:
   super_linter_job:
     name: "Super Linter"
