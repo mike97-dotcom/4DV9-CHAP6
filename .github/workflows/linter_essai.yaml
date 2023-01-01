@@ -1,0 +1,14 @@
+name: "Linter essai"
+on:
+ pull_request:
+jobs:
+  super_linter_job:
+    name: "Super Linter"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: "lint code"
+        uses: github/super-linter/slim@v4
+        env:
+         VALIDATED_ALL_CODEBASE : true
+         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
